@@ -10,6 +10,7 @@ function Pessoa(nome, idade) {
         console.log(this.nome + ' andou');
     }
 }
+
   // Crie 3 pessoas, João - 20 anos,
   // Maria - 25 anos, Bruno - 15 anos
   //acertei
