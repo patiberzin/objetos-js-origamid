@@ -1,73 +1,90 @@
-/*const comida = 'Pizza';
-const frase = "A melhor comida";
-const agua = new String('Agua');
+//Exercícios
+//1 - Utilizando o foreach na array abaixo,
+// some os valores de Taxa e os valores de Recebimento
 
-console.log(comida.length); //5
-console.log(agua[2]); //u
-console.log(frase[frase.length - 1]); //a - macete para pegar o último valor
-//o index eu sempre tenho que tirar 1, porque começa de 0*/
+/*const transacoes = [
+    {
+      descricao: 'Taxa do Pão',
+      valor: 'R$ 39',
+    },
+    {
+      descricao: 'Taxa do Mercado',
+      valor: 'R$ 129',
+    },
+    {
+      descricao: 'Recebimento de Cliente',
+      valor: 'R$ 99',
+    },
+    {
+      descricao: 'Taxa do Banco',
+      valor: 'R$ 129',
+    },
+    {
+      descricao: 'Recebimento de Cliente',
+      valor: 'R$ 49',
+    },
+  ];
 
-//.charAt() é um método
+  let taxaTotal = 0
+  let recebimentoTotal = 0
 
-const linguagem = "JavaScript";
+  transacoes.forEach((item) => {
+    const numeroLimpo = +item.valor.replace('R$ ', '');
+    if(item.descricao.slice(0, 4) === 'Taxa') {
+        taxaTotal += numeroLimpo;
+    } else {
+      recebimentoTotal += numeroLimpo;
+    }
+  })
+  console.log(taxaTotal);
+  console.log(recebimentoTotal);
 
-console.log(linguagem.charAt(0));
-console.log(linguagem.charAt(linguagem.length - 1));
+  //Primeiro eu falo com cada item
+  //pego o item (de cada item), pego os valores e dou um replace, que é para trocar
+  //R$ por espaço
+  //Depois, SE o item tiver a parte da descrição entre 0 e 4 a palavra Taxa
+  //taxaTotal vai se somar ao númeroLimpo.
+  //Lembrando que taxaTotal é zero e eu tenho que usar para a soma.
+  //E joga no console o resultado de taxaTotal
 
-//concatenar as strings
 
-const frase = "A melhor linguagem é ";
+  
+  //2 - Retorne uma array com a lista abaixo
+  const transportes = 'Carro;Avião;Trem;Ônibus;Bicicleta';
+  const array = transportes.split(';');
+  console.log(array);
 
-const fraseCompleta = frase.concat(linguagem, '!!');
-console.log(fraseCompleta);
+  
+  
+//3 - Substitua todos os span's por a's
+  let html = `<ul>
+                  <li><span>Sobre</span></li>
+                  <li><span>Produtos</span></li>
+                  <li><span>Contato</span></li>
+                </ul>`;
 
-//str.includes(search, position)
+  html = html.split('span').join('a');
+  console.log(html);
 
-const fruta = 'Melancia';
-const listaFrutas = 'Morango, Uva, Melancia';
+  
+  //4 - Retorne o último caracter da frase
+  const frase = 'Melhor do ano!';
 
-const teste1 = listaFrutas.includes(fruta); //true
-const teste2 = fruta.includes(listaFrutas); //false
+  console.log(frase.slice(-1));
+  //ou:
+  //console.log(frase[frase.length - 1]);*/
+  
+//5 - Retorne o total de taxas
 
-console.log(teste1, teste2);
 
-//str.endsWith(search)
-//str.startsWith(search)
+  const transacoes2 = ['Taxa do Banco', '   TAXA DO PÃO', '  taxa do mercado', 'depósito Bancário', 'TARIFA especial'];
 
-console.log(fruta.endsWith('cia')); //true
+  let taxaTotal = 0;
 
-console.log(fruta.startsWith('Me')); //true
-
-console.log(fruta.startsWith('lan'));//false
-
-//str.slice(start, end)
-
-const transacao1 = 'Depósito de cliente';
-const transacao2 = 'Depósito de fornecedor';
-const transacao3 = 'Taxa de camisas';
-
-console.log(transacao1.slice(0, 3)); //Dep
-console.log(transacao2.slice(0, 3)); //Dep
-console.log(transacao3.slice(0, 3)); //Tax
-
-console.log(transacao1.slice(12)); //cliente
-console.log(transacao1.slice(-4)); //ente
-console.log(transacao1.slice(3, 6)); //ósi
-
-//str.substring(start, end)
-//valor negativo não funciona aqui
-
-const lingua = "JavaScript";
-console.log(lingua.substring(3,5)); //aS
-console.log(lingua.substring(0,4)); //Java
-console.log(lingua.substring(4)); //Script
-console.log(lingua.substring(-3)); //JavaScript
-
-//str.indexOf(search)
-//str.lastIndexOf(search)
-
-const instrumento = 'Guitarra';
-
-instrumento.indexOf('r'); //5
-instrumento.lastIndexOf('r'); //6
-instrumento.indexOf('ta'); //3
+ transacoes2.forEach((item) => {
+   item = item.toLocaleLowerCase().trim().slice(0,4);
+   if(item === 'taxa') {
+    taxaTotal++
+  }
+ });
+ console.log(taxaTotal);
