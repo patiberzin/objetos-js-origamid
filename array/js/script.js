@@ -1,49 +1,72 @@
 //EXERCÍCIOS
 
-// Retorne um número aleatório
-// entre 1050 e 2000
+const comidas = ['Pizza', 'Frango', 'Carne', 'Macarrão'];
+// Remova o primeiro valor de comidas e coloque em uma variável
 
-const min = 1050;
-const max = 2000;
+/*const primeiroValor = comidas.shift();
+console.log(primeiroValor);*/
 
-console.log(Math.floor(Math.random() * (max - min + 1)) + min);
+// Remova o último valor de comidas e coloque em uma variável
 
-// Retorne o maior número da lista abaixo
-const numeros = '4, 5, 20, 30, 9';
-const stringToArray = numeros.split(', ');
-//passo cada item como se fosse um argumento com os ...
-console.log(Math.max(...stringToArray));
- 
-// Crie uma função para limpar os preços
-// e retornar os números com centavos arredondados
-// depois retorne a soma total
-const listaPrecos = ['R$ 59,99', ' R$ 100,222',
-                     'R$ 230  ', 'r$  200'];
+const ultimoValor = comidas.pop();
+console.log(ultimoValor);
 
-//primeiro colocar os precos em letra maiuscula
+const resultado = ultimoValor;
 
-function limparPrecos(preco) {
-    preco = +preco.toUpperCase().replace('R$', '').trim().replace(',', '.');
-    //agora eu arredondo o preço:
-    preco = +preco.toFixed(2)
-    return preco;
-}   
+// Adicione 'Arroz' ao final da array
 
-let soma = 0;
+const concatUltimo = comidas.push('Arroz');
+console.log(concatUltimo);
 
-listaPrecos.forEach((preco) => {
-    soma += limparPrecos(preco);
-});
+// Adicione 'Peixe' e 'Batata' ao início da array
 
-//se eu quiser colocar essa soma em reais:
+const estudantes = ['Marcio', 'Brenda', 'Joana', 'Kleber', 'Julia'];
 
-console.log(soma.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'}));
+const concatInicio = ['Peixe', 'Batata'].concat(estudantes);
+console.log(concatInicio);
 
-limparPrecos[3];
+// Arrume os estudantes em ordem alfabética
 
-//indexOf() localiza o elemento na array
-//splice() remove
+const alfabetica = estudantes.sort();
+console.log(alfabetica);
 
-//limpar preços: 
-//arredondar: .ceil()
-//soma total: funcao soma
+// Inverta a ordem dos estudantes
+
+const reverse = estudantes.reverse();
+console.log(reverse);
+
+// Verifique se Joana faz parte dos estudantes
+
+//Array.prototype.includes()
+
+//não sei, não consegui
+
+console.log(estudantes.includes('Joana')) //retorna true
+
+// Verifique se Juliana faz parte dos estudantes
+
+console.log(estudantes.includes('Juliana')) //retorna false
+
+let html = `<section>
+              <div>Sobre</div>
+              <div>Produtos</div>
+              <div>Contato</div>
+            </section>`
+// Substitua section por ul e div com li,
+// utilizando split e join
+//usa o let para poder modificar
+
+
+html = html.split('section').join('ul');
+html = html.split('div').join('li');
+console.log(html);
+
+
+const carros = ['Ford', 'Fiat', 'VW', 'Honda'];
+// Remova o último carro, mas antes de remover
+// salve a array original em outra variável
+
+const carrosCopia = carros; //cópia da array original
+
+const remove = carros.pop();
+console.log(remove);
