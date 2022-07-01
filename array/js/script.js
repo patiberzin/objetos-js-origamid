@@ -66,7 +66,7 @@ const carros = ['Ford', 'Fiat', 'VW', 'Honda'];
 // Remova o último carro, mas antes de remover
 // salve a array original em outra variável
 
-const carrosCopia = carros; //cópia da array original
+const carrosCopia = carros.slice(); //cópia da array original
 
 const remove = carros.pop();
 console.log(remove);
